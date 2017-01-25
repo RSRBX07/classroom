@@ -1,0 +1,10 @@
+
+
+<h1>Liste des cours</h1>
+
+<% @courses.each do |cours| %>
+  <%= cours.field %>
+  <%= link_to 'voir', courses_show_path %>
+  <br>
+<% end %>
+
