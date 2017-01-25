@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'courses/edit'
+
   get 'courses/index'
 
   get 'students/index'
