@@ -8,13 +8,13 @@
 
 Student.destroy_all
 
-Student.create [
+Student.create! [
     {name: "aaa"},
     {name: "bbb"}
 ]
 
 Course.destroy_all
-Course.create [
+Course.create! [
     {field: "f1", teacher:"t1"},
     {field: "f2", teacher:"t2"}
 ]
