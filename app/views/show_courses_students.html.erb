@@ -1,0 +1,6 @@
+
+
+def show_courses_students
+    @courses = Course.find[(param="id")]
+    @courses_students = Student.find[(param="id")]
+  end 

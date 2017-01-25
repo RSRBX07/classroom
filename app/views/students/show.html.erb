@@ -1,2 +1,8 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1> Courses#Show </h1>
+<p>Ruby on Rails</p>
+<p>Html & Css</p>
+
+<% @courses.each do |course|  %>
+  <%= course.name %>
+
+<% end %>
