@@ -1,4 +1,4 @@
-<h1>Liste des étudiants</h1>
+<h1>Gestion des cours</h1>
 
 <style>
   .student{
@@ -14,28 +14,58 @@
 </style>
 
 <div class="row">
+<!-- Colonne de gauche -->
+  <div class="col-sm-8">
+    <h2> Liste des cours </h2>
+    <!-- Tableau des cours -->
+    <table class="table table-striped">
 
-  <div class="col-sm-8"></div>
+      <thead>
+        <tr>
+          <th>Matière</th>
+          <th>Professeur</th>
+          <th>Etudiants inscrits</th>
+        </tr>
+      </thead>
 
+      <tbody>
+        <% @courses.each do |course| %>
+          <tr>
+            <th><%= course.field %></th>
+            <th><%= course.teacher %></th>
+            <th><%= Course.count %></th>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </div>
+
+<!-- Colonne de droite -->
   <div class="col-sm-4">
+    <h2> Etudiants </h2>
 
+    <!-- Affichage du profil des étudiants -->
     <% @students.each do |student| %>
       <div class="student">
         <div class="row">
 
+          <!-- Photo -->
           <div class="col-sm-2">
             <img src=<%= student.picture %> alt=<%= student.name %> id="profile_pic" class="img-circle" height="70px" width="70px">
           </div>
-
+          
+          <!-- Nom -->
           <div class="col-sm-10">
             <h2><%= student.name %></h2>
           </div>
 
           <hr>
 
+          <!-- Inscription au cours -->
           <div>
             <% if student.course != nil %>
-              <p>Est actuellement inscrit au cours de <%= student.course %>
+              <p>Est actuellement inscrit au cours de <%= student.course.field %>
             <% else %>
               <p>N'est actuellement inscrit à aucun cours<p>
             <% end %>
@@ -43,7 +73,7 @@
 
         </div>
       </div>
-      
+
       <br>
     <% end %>
   </div>
