@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20170126181416) do
   create_table "courses", force: :cascade do |t|
     t.string   "field"
     t.string   "teacher"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "remain_days", default: 0
   end
 
   create_table "students", force: :cascade do |t|

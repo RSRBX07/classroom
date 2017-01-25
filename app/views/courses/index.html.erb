@@ -1,0 +1,4 @@
+<h1>Course#index</h1>
+<% @courses.each do |course|  %>
+  <div><span>Cours:<%= course.field %></span> - <span></span><span>it's remains <%=course.remain_days%> days</span></div>
+<% end %>
