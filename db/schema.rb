@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170125111555) do
 
   create_table "students", force: :cascade do |t|
     t.string  "name"
+    t.string  "picture"
     t.integer "course_id"
   end
 
