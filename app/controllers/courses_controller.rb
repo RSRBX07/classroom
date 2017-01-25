@@ -3,7 +3,8 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
-  def show
-    
+  def show 
+    @course = Course.first
+    @students= Student.all
   end
 end
