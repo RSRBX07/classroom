@@ -9,12 +9,12 @@
 Student.destroy_all
 
 Student.create [
-    {name: "aaa"},
-    {name: "bbb"}
+    {name: "Pablo"},
+    {name: "Leonard"}
 ]
 
 Course.destroy_all
 Course.create [
-    {field: "f1", teacher:"t1"},
-    {field: "f2", teacher:"t2"}
+    {field: "Arts", teacher:"Toto"},
+    {field: "Sciences", teacher:"Tata"}
 ]
