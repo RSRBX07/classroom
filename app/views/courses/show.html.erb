@@ -1,10 +1,9 @@
 
-<h1>Liste des eleves du cours <%= @course.field %></h1>
+<h1>Liste des eleves du cours</h1>
 
-<% @students.each do |student|  %>
-  <div><%= student.name %></div>
+<% @students.each do |student| %>
+  <%= student.name %></div>
   <br>
 <% end %>
-
 
 <%= link_to 'Back', courses_index_path %>

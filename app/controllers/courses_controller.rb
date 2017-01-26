@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course= Course.last
-    @students= Course.all
+    @course= Course.find(params[:id])
+    @students= @course.student
   end
 end
