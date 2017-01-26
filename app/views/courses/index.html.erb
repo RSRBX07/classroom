@@ -2,14 +2,11 @@
 <table>
   <tr>
     <th>Matière</th>
-    <th>Professeur</th>
-    <th>Nombre de jours restant</th>
   </tr>
   <% @courses.each do |course|  %>
     <tr>
-      <td><%= course.field %></td>
-      <td><%= course.teacher %></td>
-      <td><%= course.remain_days %></td>
+      <td><%= link_to course.field, controller: "courses", action: "show", id:course %></td>
     </tr>
   <% end %>
 </table>
+<h4><%= link_to "voir liste des étudiants", students_index_path %></h4>

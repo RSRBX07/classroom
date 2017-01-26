@@ -1,1 +1,4 @@
-<h1>Course#show</h1>
+<h1>Cours : <%= @course.field %></h1>
+<h2>Enseigné par <%= @course.teacher %></h2>
+<h3>Il reste <%= @course.remain_days %> jours de cours</h3>
+<h4><%= link_to "retour à liste", courses_index_path %></h4>
