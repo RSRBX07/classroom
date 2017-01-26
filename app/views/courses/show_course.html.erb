@@ -1,6 +1,6 @@
 <h1>Courses#show_course</h1>
 
-<% @courses.each do |c|  %>
-  <%= link_to c.field,"/courses/show_course_students/" + c.id.to_s %>
+<% @courses.each do |course|  %>
+  <%= link_to course.field, courses_show_course_path %>
     <br>
 <% end %>

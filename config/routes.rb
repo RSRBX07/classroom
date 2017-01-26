@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'courses/show_course_students/:id', to: 'courses#show_course_students'
+   get 'courses/show_course_students/:id', :to => "courses#show_course"
+  
   
   get 'courses/show_course'
 
