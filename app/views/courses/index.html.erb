@@ -1,4 +1,6 @@
 <h1>Courses</h1>
 <% @courses.each do |course|  %>
-  <%= link_to course.field, course_id_path(course) %>
+  <div>
+    <%= link_to course.field, course_id_path(course) %>
+  </div>
 <% end %>
