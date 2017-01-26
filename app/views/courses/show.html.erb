@@ -1,4 +1,6 @@
-<h1>Liste des étudiants suivant le cours "<%= @course.field %>"</h1>
+
+
+<h1>Liste des étudiants inscrits au cours de "<%= @course.field %>"</h1>
 <%= Time.now%>
 <%  @course.students.each do |student|  %>
   <%= student.name %>

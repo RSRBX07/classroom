@@ -9,10 +9,10 @@
 Student.destroy_all
 
 Student.create! [
-    {name: "amara", course_id: 9},
-    {name: "hind", course_id: 10},
-    {name: "Wissam" , course_id: 9},   
-    {name: "El Khalil", course_id: 10}
+    {name: "amara", course_id: 15},
+    {name: "hind", course_id: 15},
+    {name: "Wissam" , course_id: 16},   
+    {name: "El Khalil", course_id: 16}
 ]
 
 Course.destroy_all

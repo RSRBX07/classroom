@@ -1,7 +1,13 @@
 class CoursesController < ApplicationController
+  def index
+    @courses = Course.all
+  end
+ 
   def show
-
-    @course = Course.find(params["id"])      
+    if params["id"].nil?
+        redirect_to '/'
+    end 
+    @course = Course.find(params["id"])     
     # rescue ActiveRecord::RecordNotFound => error
     #   redirect_to '/courses/show_course'
     # rescue NameError => error
