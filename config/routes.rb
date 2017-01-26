@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   get 'students/show/:id', :to => "students#show", :as => "show_student"
 
-#  root to: 'students/index'
-
   root "students#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
