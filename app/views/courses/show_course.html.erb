@@ -1,6 +1,7 @@
 <h1>Courses#Show</h1>
 <p><%= @course.field %></p>
 <ul>
-  <li><%= @student.name %></li>
-  
+<% @course.students.each do |student|%>
+  <li><%= student.name %></li>
+<% end %>
 </ul>
