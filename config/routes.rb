@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'courses/edit'
+  
+  resources :courses
 
-  get 'courses/index'
+#  get 'courses/edit'
+
+#  get 'courses/index'
 
   get 'students/index'
 
