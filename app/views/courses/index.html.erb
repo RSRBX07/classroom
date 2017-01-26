@@ -1,8 +1,15 @@
-<h1>Course#index</h1>
-<% @courses.each do |course|  %>
-  <div>
-    <span>Cours:<%= course.field %></span>
-    <span> - </span>
-    <span>it's remains <%=course.remain_days%> days</span>
-  </div>
-<% end %>
+<h1>Cours</h1>
+<table>
+  <tr>
+    <th>Matière</th>
+    <th>Professeur</th>
+    <th>Nombre de jours restant</th>
+  </tr>
+  <% @courses.each do |course|  %>
+    <tr>
+      <td><%= course.field %></td>
+      <td><%= course.teacher %></td>
+      <td><%= course.remain_days %></td>
+    </tr>
+  <% end %>
+</table>

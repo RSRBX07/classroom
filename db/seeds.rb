@@ -17,6 +17,6 @@ Student.create [
 
 Course.destroy_all
 Course.create! [
-    {field: "f1", teacher:"t1"},
-    {field: "f2", teacher:"t2"}
+    {field: "Math", teacher:"M. Einstein", remain_days:14},
+    {field: "Anglais", teacher:"Mme Simpson", remain_days:12}
 ]
