@@ -13,6 +13,13 @@
   }
 </style>
 
+<!-- Partie haute -->
+<div class="up">
+  <div class="container">
+     <h4><%= Student.count %> élèves sont actuellement inscrits</h4>     
+  </div>
+</div>
+
 <div class="row">
 <!-- Colonne de gauche -->
   <div class="col-sm-8">
@@ -52,12 +59,12 @@
 
           <!-- Photo -->
           <div class="col-sm-2">
-            <img src=<%= student.picture %> alt=<%= student.name %> id="profile_pic" class="img-circle" height="70px" width="70px">
+            <img src=<%= student.picture %> title=<%= student.name %> id="profile_pic" class="img-circle" height="70px" width="70px">
           </div>
           
           <!-- Nom -->
           <div class="col-sm-10">
-            <h2><%= student.name %></h2>
+            <%= link_to(student.name, "show/#{student.id}") %> <!--students_show_path(student.id)-->
           </div>
 
           <hr>
