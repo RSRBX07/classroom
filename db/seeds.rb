@@ -8,7 +8,7 @@
 
 Student.destroy_all
 
-Student.create! [
+Student.create [
     {name: "hind"},
     {name: "ammara"}
 ]
@@ -16,5 +16,5 @@ Student.create! [
 Course.destroy_all
 Course.create [
     {field: "Ruby on rails", teacher:"t1"},
-    {field: "Html", teacher:"t2"}
+    {field: "Html&Css", teacher:"t2"}
 ]
