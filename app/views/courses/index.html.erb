@@ -3,8 +3,8 @@
 <h1>Liste des cours</h1>
 
 <% @courses.each do |cours| %>
-  <p class="cours"><%= cours.field %></p>
-  <%= link_to 'voir', courses_show_path(cours) %>
+  <p class="cours"><%= cours.field %>
+  <%= link_to 'voir', course_id_path(cours) %></p>
   <br>
 <% end %>
 

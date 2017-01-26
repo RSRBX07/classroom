@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'courses/show'
 
-  get 'courses/show/:id', :to => "courses#show"
+  get 'courses/show/:id', :to => "courses#show", as: 'course_id'
 
   get 'students/index'
 
