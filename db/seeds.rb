@@ -9,8 +9,10 @@
 Student.destroy_all
 
 Student.create [
-    {name: "aaa"},
-    {name: "bbb"}
+    {name: "Donald Trump", src_img: "avatar2" },
+    {name: "Le roi des Belges", src_img: "avatar4"},
+    {name: "Not 42", src_img: "avatar3"},
+    {name: "Pénélope Fillon", src_img: "avatar1"}
 ]
 
 Course.destroy_all
