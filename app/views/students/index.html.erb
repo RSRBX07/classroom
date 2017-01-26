@@ -1,5 +1,6 @@
 <h1>Students#index</h1>
 <p>Find me in app/views/students/index.html.erb</p>
 <% @students.each do |student|  %>
-  <%= link_to student.name, "show/#{student.id}" %>
+  <%#= link_to student.name, "show/#{student.id}" %>
+  <%= link_to student.name, show_student_path(student.id) %>
 <% end %>
