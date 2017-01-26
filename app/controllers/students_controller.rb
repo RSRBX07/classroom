@@ -6,7 +6,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find params[:id]
+    begin
+      @student = Student.find params[:id]
+    rescue => exception
+      redirect_to students_index_path, notice: "L'étudiant #{params[:id0]} est introuvable, vous avez été redirigé "
+    end
   end
 
   def new

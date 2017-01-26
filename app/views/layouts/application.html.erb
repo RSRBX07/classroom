@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <div class="row">
 
         <div class="col-sm-1">
@@ -24,11 +24,17 @@
         </div> 
 
         <div class="col-sm-1">
-          <%= link_to "Accueil", students_index_path %>
+          <h4><%= link_to "Accueil", students_index_path %></h4>
         </div>   
-        
+
       </div>
     </header>
+
+    <div class="notice">
+      <% if notice %>
+        <p><%= notice %></p>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>

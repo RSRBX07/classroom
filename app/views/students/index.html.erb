@@ -14,29 +14,31 @@
 <div class="row">
 <!-- Colonne de gauche -->
   <div class="col-sm-8">
-    <h2> Liste des cours </h2>
-    <!-- Tableau des cours -->
-    <table class="table table-striped">
+    <div class="container">
+      <h2> Liste des cours </h2>
+      <!-- Tableau des cours -->
+      <table class="table table-striped">
 
-      <thead>
-        <tr>
-          <th>Matière</th>
-          <th>Professeur</th>
-          <th>Etudiants inscrits</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @courses.each do |course| %>
+        <thead>
           <tr>
-            <th><%= course.field %></th>
-            <th><%= course.teacher %></th>
-            <th><%= course.students.count %></th>
+            <th>Matière</th>
+            <th>Professeur</th>
+            <th>Etudiants inscrits</th>
           </tr>
-        <% end %>
-      </tbody>
+        </thead>
 
-    </table>
+        <tbody>
+          <% @courses.each do |course| %>
+            <tr>
+              <th><%= course.field %></th>
+              <th><%= course.teacher %></th>
+              <th><%= course.students.count %></th>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
   </div>
 
 <!-- Colonne de droite -->
