@@ -9,10 +9,10 @@
 Student.destroy_all
 
 Student.create! [
-    {name: "john", avatar: "image.jpg"},
-    {name: "paola", avatar: "image.jpg"}, 
-    {name: "thierry", avatar: "image.jpg"},
-    {name:"susan", avatar: "image.jpg"}
+    {name: "john", avatar: "/image/image.jpg"},
+    {name: "paola", avatar: "/image/imgres.jpg"}, 
+    {name: "thierry", avatar: "/image/chat.jpg"},
+    {name:"susan", avatar: "/image/autruche(1).jpg"}
 ]
 
 Course.destroy_all

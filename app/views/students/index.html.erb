@@ -2,9 +2,12 @@
 <p>Find me in app/views/students/index.html.erb</p>
 <br>
 <% @students.each do |student|  %>
-  <%= student.name %>
-  <br>
-  <%= student.avatar  %>
-  <br>
-  <img src="/image/image.jpg">
+  
+
+    my name is <%= student.name %>
+    <br>
+    my avatar is <%= student.avatar  %>
+    <br>
+    <img src=<%= student.avatar  %> />
+
 <% end %>
