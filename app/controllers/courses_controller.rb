@@ -1,11 +1,7 @@
 class CoursesController < ApplicationController
-  def show_course
-    @courses = Course.all
-  end
+  def show
 
-  def show_course_students
-      @course_students = @course.students
-    #   @course = Course.find(params["id"])      
+    @course = Course.find(params["id"])      
     # rescue ActiveRecord::RecordNotFound => error
     #   redirect_to '/courses/show_course'
     # rescue NameError => error
