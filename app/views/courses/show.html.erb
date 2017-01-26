@@ -1,5 +1,7 @@
 <h1>Course</h1>
 <p><%= @course.field %></p>
 <% @students.each do |student|  %>
-  <%= student.course_id %>
+  <%= student.name %>
 <% end %>
+<br>
+<%= link_to 'Courses', courses_index_path %>
