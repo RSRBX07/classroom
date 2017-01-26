@@ -1,0 +1,1 @@
+alert('il fait beau dehors');

@@ -9,8 +9,8 @@
 Student.destroy_all
 
 Student.create [
-    {name: "hind"},
-    {name: "ammara"}
+    {name: "hind", course_id:9},
+    {name: "ammara",course_id:8}
 ]
 
 Course.destroy_all
