@@ -4,7 +4,9 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @titre= Course.field
     @course= Course.find(params[:id])
     @students= @course.students
   end
 end
+
