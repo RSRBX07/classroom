@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  
-  resources :courses
 
-#  get 'courses/edit'
+  get 'courses/edit'
 
-#  get 'courses/index'
+  get 'courses/index'
 
   get 'students/index'
 
-  get 'students/show'
+  get 'students/show/:id', :to => "students#show"
+
+#  get 'students/show/:id' => 'students#show'
 
   root "students#index"
 
