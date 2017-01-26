@@ -1,22 +1,13 @@
-<h1>Gestion des cours</h1>
 
-<style>
-  .student{
-    background-color: #eaedf2;
-    border-radius: 30px;
-    width: 600px ;
-    height: 200px;
-  }
-  #profile_pic {
-    margin: 10px;
-    border: 2px solid color black;
-  }
-</style>
 
 <!-- Partie haute -->
 <div class="up">
-  <div class="container">
-     <h4><%= Student.count %> élèves sont actuellement inscrits</h4>     
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Gestion des cours</h1>
+      <h4><%= Student.count %> élèves sont actuellement inscrits</h4>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Gérer les élèves</a></p>
+    </div>
   </div>
 </div>
 
@@ -40,7 +31,7 @@
           <tr>
             <th><%= course.field %></th>
             <th><%= course.teacher %></th>
-            <th><%= Student.count %></th>
+            <th><%= Student.count(:course_id) %></th>
           </tr>
         <% end %>
       </tbody>
@@ -59,12 +50,12 @@
 
           <!-- Photo -->
           <div class="col-sm-2">
-            <img src=<%= student.picture %> title=<%= student.name %> id="profile_pic" class="img-circle" height="70px" width="70px">
+              <img src=<%= student.picture %> title=<%= student.name %> class="img-circle">
           </div>
           
           <!-- Nom -->
           <div class="col-sm-10">
-            <%= link_to(student.name, "show/#{student.id}") %> <!--students_show_path(student.id)-->
+            <h1><%= link_to(student.name, student_path(student.id)) %>
           </div>
 
           <hr>
