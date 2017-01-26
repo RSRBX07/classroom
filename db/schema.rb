@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126181416) do
+ActiveRecord::Schema.define(version: 20170126212419) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "field"
@@ -21,9 +21,8 @@ ActiveRecord::Schema.define(version: 20170126181416) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string  "name"
-    t.integer "course_id"
-    t.string  "src_img"
+    t.string "name"
+    t.string "src_img"
   end
 
 end
