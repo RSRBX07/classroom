@@ -1,2 +1,41 @@
-<h1><%= @student.name %></h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<div class="profile_head">
+  <div class= "container">
+    <div class= "row">
+
+      <div class= "col-sm-2">
+        <img src=<%= @student.picture %> title=<%= @student.name %> class="img-circle_profile">
+      </div>
+
+      <div class= "col-sm-10">
+        <div class="profile_name">
+          <h1><%= @student.name %></h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="content">
+
+  <h1> Cours : </h1>
+  <!-- Inscription au cours -->
+    <div class="container">
+      <% if @student.course != nil %>
+        <h4>Est actuellement inscrit au cours de <%= @student.course.field %>, enseigné par <%= @student.course.teacher %></h4>
+      <% else %>
+        <h4>N'est actuellement inscrit à aucun cours</h4>
+      <% end %>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+

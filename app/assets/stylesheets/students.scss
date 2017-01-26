@@ -10,9 +10,26 @@
   }
   .img-circle {
     margin: 10px;
-    border: 5px solid color black;
+    border: 5px solid black;
     height: 70px;
     width: 70px;
+  }
+
+  .profile_head {
+     background-color: #eaedf2;
+  }
+
+  .img-circle_profile {
+    margin: 10px;
+    border: 5px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 30px;
+  }
+
+  .profile_name>h1 {
+    margin: 10px;
+    font-size: 120px;
   }
 
   
