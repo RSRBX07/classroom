@@ -1,4 +1,20 @@
-
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <!--<%= button_to "Ajouter", new_student %>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!-- Partie haute -->
 <div class="up">
@@ -44,7 +60,7 @@
 <!-- Colonne de droite -->
   <div class="col-sm-4">
     <h2> Etudiants </h2>
-    <%= button_to "Ajouter", students: "new" %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="modal">Ajouter Etudiant</button>
 
     <!-- Affichage du profil des étudiants -->
     <% @students.each do |student| %>
@@ -79,3 +95,9 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('#mod_new_student').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+  })
+</script>
