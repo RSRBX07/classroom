@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "students#index"
+  root "welcome#index"
   get 'students/index'
 
   get 'students/show/:id', :to => "students#show" , :as => "student"
