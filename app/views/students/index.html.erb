@@ -1,6 +1,14 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
-<% @students.each do |student|  %>
-  <%= student.name %>
+<p> il est actuellement <%= @time %> </p>
+  <div class="jumbotron">
+    <h1>Students#index</h1>
+    <p>Here is the list of our students</p>
+    <div class="row">
 
-<% end %>
+      <% @students.each do |student|  %>
+        <h2><%= link_to student.name, student_path(student) %></h2>
+        <%= image_tag(student.avatar, alt: student.name, size: 50)  %>
+         <hr>
+      <% end %>
+
+    </div>
+  </div>
