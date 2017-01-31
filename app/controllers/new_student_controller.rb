@@ -1,2 +1,0 @@
-class NewStudentController < ApplicationController
-end

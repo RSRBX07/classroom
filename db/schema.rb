@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126084434) do
+ActiveRecord::Schema.define(version: 20170130152553) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "field"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170126084434) do
     t.string  "name"
     t.integer "course_id"
     t.string  "picture",   default: "http://istc-pc-test-media.cs.washington.edu/images/default-profile-pic.png"
+    t.integer "age"
   end
 
 end

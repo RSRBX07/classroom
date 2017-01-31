@@ -1,20 +1,4 @@
-<!-- Modal -->
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        <!--<%= button_to "Ajouter", new_student %>-->
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
 
 <!-- Partie haute -->
 <div class="up">
@@ -22,7 +6,7 @@
     <div class="container">
       <h1>Gestion des cours</h1>
       <h4><%= Student.count %> élèves sont actuellement inscrits</h4>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Gérer les élèves</a></p>
+      <div class="btn btn-primary btn-lg"><%= link_to 'Créer étudiant', new_student_path %></div>
     </div>
   </div>
 </div>
@@ -60,7 +44,6 @@
 <!-- Colonne de droite -->
   <div class="col-sm-4">
     <h2> Etudiants </h2>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="modal">Ajouter Etudiant</button>
 
     <!-- Affichage du profil des étudiants -->
     <% @students.each do |student| %>
@@ -73,21 +56,27 @@
           </div>
           
           <!-- Nom -->
-          <div class="col-sm-10">
-            <h1><%= link_to(student.name, student_path(student.id)) %>
+          <div class="col-sm-9">
+            <h1><%= link_to(student.name, student_profile_path(student.id)) %>
+
+            <!-- Inscription au cours -->
+            <div class= "container">
+              <% if student.course != nil %>
+                <h4>Est actuellement inscrit au cours de <%= student.course.field %></h4>
+              <% else %>
+                <h4>N'est actuellement inscrit à aucun cours</h4>
+              <% end %>
+            </div>
           </div>
 
-          <hr>
 
-          <!-- Inscription au cours -->
-          <div>
-            <% if student.course != nil %>
-              <p>Est actuellement inscrit au cours de <%= student.course.field %></p>
-            <% else %>
-              <p>N'est actuellement inscrit à aucun cours</p>
-            <% end %>
+          <!--Delete-->
+          <div class="col-sm-1">
+            <div class="container">
+              <%= link_to 'X', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
           </div>
-
+        
         </div>
       </div>
 
@@ -96,8 +85,3 @@
   </div>
 </div>
 
-<script>
-  $('#mod_new_student').on('shown.bs.modal', function () {
-  $('#myInput').focus()
-  })
-</script>
