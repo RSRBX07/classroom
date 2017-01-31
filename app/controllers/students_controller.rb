@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
     begin
       @student = Student.find params[:id]
     rescue => exception
-      redirect_to students_path, :flash => { :error => "L'étudiant #{params[:id0]} est introuvable, vous avez été redirigé " }
+      redirect_to students_path, :flash => { :error => "L'étudiant #{params[:id]} est introuvable, vous avez été redirigé " }
     end
   end
 

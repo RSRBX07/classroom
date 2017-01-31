@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   get 'students/index', :as => "acceuil"
   get 'students/show/:id', :to => "students#show" , :as => "student_profile"
-  get 'courses/show'
+  get 'courses/show/:id', :to => "courses#show" , :as => "setup_courses"
 
+  get 'courses/new', to: 'courses#new'
   post 'courses', to: 'courses#create'
 
 

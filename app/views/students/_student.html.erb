@@ -1,0 +1,37 @@
+<!-- Affichage du profil des étudiants -->
+
+<div class="student">
+  <div class="row">
+
+    <!-- Photo -->
+    <div class="col-sm-2">
+        <img src=<%= student.picture %> title=<%= student.name %> class="img-circle">
+    </div>
+    
+    <!-- Nom -->
+    <div class="col-sm-9">
+      <h1><%= link_to(student.name, student_profile_path(student.id)) %>
+
+      <!-- Inscription au cours -->
+      <div class= "container">
+        <% if student.course != nil %>
+          <h4>Est actuellement inscrit au cours de <%= student.course.field %></h4>
+        <% else %>
+          <h4>N'est actuellement inscrit à aucun cours</h4>
+        <% end %>
+      </div>
+    </div>
+
+
+    <!--Delete-->
+    <div class="col-sm-1">
+      <div class="container">
+        <%= link_to 'X', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  
+  </div>
+
+</div>
+
+<br>

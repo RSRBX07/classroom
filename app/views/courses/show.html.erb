@@ -1,0 +1,82 @@
+<!-- Tête -->
+<div class="profile_head">
+  <div class= "container">
+
+    <h1><%= @course.field %></h1>
+    <h3>Avec <%= @course.teacher %>
+    <h3><%= @course.students.count %> y sont inscrits</h3>
+
+  </div>
+</div>
+
+<!-- Gestion des attributions -->
+<div class="container">
+  <div class="row">
+  <!-- Inscrit -->
+    <div class="col-sm-6">
+      <table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Cours actuel</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @students.each do |student| %>
+            <% if student.course_id == @course.id %>
+              <tr>
+                <th><img class="picture-mini" src=<%= student.picture %></th>
+                <th><%= student.name %></th>
+                <th><%= student.age %></th>
+                <th>
+                  <% if student.course != nil %>
+                    <%= student.course.field %>
+                  <% else %>
+                    Aucun
+                  <% end %>
+                </th>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <!-- Pas inscrit -->
+    <div class="col-sm-6">
+      <table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Cours actuel</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @students.each do |student| %>
+            <% if student.course_id != @course.id %>
+              <tr>
+                <th><img class="picture-mini" src=<%= student.picture %></th>
+                <th><%= student.name %></th>
+                <th><%= student.age %></th>
+                <th>
+                  <% if student.course != nil %>
+                    <%= student.course.field %>
+                  <% else %>
+                    Aucun
+                  <% end %>
+                </th>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
