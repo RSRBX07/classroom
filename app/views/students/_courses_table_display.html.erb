@@ -1,0 +1,24 @@
+<table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th>Matière</th>
+            <th>Professeur</th>
+            <th>Etudiants inscrits</th>
+            <th>Accès</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        
+          <% @courses.ordered_by_last_created.each do |course| %>
+            <tr>
+              <th><%= course.field %></th>
+              <th><%= course.teacher %></th>
+              <th><%= course.students.count %></th>
+              <th><%= link_to('Gérer cours', setup_courses_path(course.id)) %></th>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>

@@ -1,0 +1,34 @@
+<h2>Elèves non-participants</h2>
+    <div class="col-sm-6">
+      <table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Cours actuel</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @students.each do |student| %>
+            <% if student.course_id != @course.id %>
+              <tr>
+                <th><img class="picture-mini" src=<%= student.picture %>> </th>
+                <th><%= student.name %></th>
+                <th><%= student.age %></th>
+                <th>
+                  <% if student.course != nil %>
+                    <%= student.course.field %>
+                  <% else %>
+                    Aucun
+                  <% end %>
+                </th>
+                <th><%= button_to "Ajouter", {controller: :students, action: :add_course, course_id: @course.id, student_id: student.id , class: "button"} %></th>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>

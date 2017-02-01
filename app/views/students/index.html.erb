@@ -16,30 +16,9 @@
     <div class="container">
       <h2> Liste des cours <small><%= link_to "- Créer cours", new_course_path %></small</h2>
       <!-- Tableau des cours -->
-      <table class="table table-striped">
+      
+        <%= render "courses_table_display" %>
 
-        <thead>
-          <tr>
-            <th>Matière</th>
-            <th>Professeur</th>
-            <th>Etudiants inscrits</th>
-            <th>Accès</th>
-          </tr>
-        </thead>
-
-        <tbody>
-        
-          <% @courses.ordered_by_last_created.each do |course| %>
-            <tr>
-              <th><%= course.field %></th>
-              <th><%= course.teacher %></th>
-              <th><%= course.students.count %></th>
-              <th><%= link_to('Gérer cours', setup_courses_path(course.id)) %></th>
-            </tr>
-          <% end %>
-        </tbody>
-
-      </table>
     </div>
   </div>
 
@@ -47,9 +26,12 @@
   <div class="col-sm-4">
     <h2> Etudiants <small><%= link_to '- Créer étudiant', new_student_path %></small></h2>
 
-    <%= render @students.limit 7 %>
+    <%= render @students.limit @limit %>
+
     <div "draw_more">
-      Voir <%=  Student.count - 7%> autres étudiants<!--Make a sytem to setup limit-->
+      <% if Student.count > @limit %>
+        <%= button_to("Voir plus sur #{Student.count - @limit} autres étudiants", {controller: :students, action: :increment_limit, limit_value: @limit}) %>
+      <% end %>
     </div>
     
   </div>

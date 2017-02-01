@@ -1,0 +1,35 @@
+<div class="col-sm-6">
+      <h2>Elèves inscrits au cours de <%= @course.field %></h2>
+      <table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Cours actuel</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @students.each do |student| %>
+            <% if student.course_id == @course.id %>
+              <tr>
+                <th><img class="picture-mini" src=<%= student.picture %>> </th>
+                <th><%= student.name %></th>
+                <th><%= student.age %></th>
+                <th>
+                  <% if student.course != nil %>
+                    <%= student.course.field %>
+                  <% else %>
+                    Aucun
+                  <% end %>
+                </th>
+                <th><%= button_to "Retirer", remove_course_path(student.id) %> </th>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>

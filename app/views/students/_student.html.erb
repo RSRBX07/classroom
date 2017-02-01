@@ -25,9 +25,7 @@
 
     <!--Delete-->
     <div class="col-sm-1">
-      <div class="delete_button">
-        <%= button_to 'X', student, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+      <%= button_to 'X', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_button" %>
     </div>
   
   </div>

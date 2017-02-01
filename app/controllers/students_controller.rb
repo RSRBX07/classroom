@@ -27,8 +27,26 @@ class StudentsController < ApplicationController
 
 
    def index 
-     @students= Student.all
-     @courses= Course.all
+    @students= Student.all
+    @courses= Course.all
+    begin
+      @limit = params[:limit_value].to_i
+      if @limit == 0
+        @limit = 5
+      end
+    rescue
+      @limit = 5
+    end
+  end
+
+  def increment_limit
+    begin
+      @limit = params[:limit_value].to_i
+    rescue
+      @limit = 0
+    end
+    @limit += 5
+    redirect_to students_path(limit_value: @limit)
   end
 
   def show

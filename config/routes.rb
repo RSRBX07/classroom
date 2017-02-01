@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root "students#index"
 
 #nav
-  get 'students/index', :as => "acceuil"
+  get 'students/index/:id', :to => "students#index", :as => "acceuil"
   get 'students/show/:id', :to => "students#show" , :as => "student_profile"
   get 'courses/show/:id', :to => "courses#show" , :as => "setup_courses"
+  post 'students/index/increment', :to => "students#increment_limit", :as => "increment_limit"
 
 #create course
   resources :courses
