@@ -2,10 +2,10 @@
 
         <thead>
           <tr>
-            <th>Matière</th>
-            <th>Professeur</th>
-            <th>Etudiants inscrits</th>
-            <th>Accès</th>
+            <th><%= t('.field') %></th>
+            <th><%= t('.teacher') %></th>
+            <th><%= t('.suscribed_students') %></th>
+            <th><%= t('.access') %></th>
           </tr>
         </thead>
 
@@ -16,7 +16,7 @@
               <th><%= course.field %></th>
               <th><%= course.teacher %></th>
               <th><%= course.students.count %></th>
-              <th><%= link_to('Gérer cours', setup_courses_path(course.id)) %></th>
+              <th><%= link_to(t('.manage_course'), setup_courses_path(course.id)) %></th>
             </tr>
           <% end %>
         </tbody>

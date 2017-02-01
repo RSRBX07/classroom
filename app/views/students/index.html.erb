@@ -4,8 +4,8 @@
 <div class="up">
   <div class="jumbotron">
     <div class="container">
-      <h1>Gestion des cours</h1>
-      <h4><%= Student.count %> élèves sont actuellement inscrits</h4>
+      <h1><%= t('title') %> </h1>
+      <h4><%= Student.count %> <%= t('.count_suscribed_students') %> </h4>
     </div>
   </div>
 </div>
@@ -14,7 +14,7 @@
 <!-- Colonne de gauche -->
   <div class="col-sm-8">
     <div class="container">
-      <h2> Liste des cours <small><%= link_to "- Créer cours", new_course_path %></small</h2>
+      <h2> <%= t('.courses_list')%> <small><%= link_to( t('.add_course') , new_course_path) %></small</h2>
       <!-- Tableau des cours -->
       
         <%= render "courses_table_display" %>
@@ -24,13 +24,13 @@
 
 <!-- Colonne de droite -->
   <div class="col-sm-4">
-    <h2> Etudiants <small><%= link_to '- Créer étudiant', new_student_path %></small></h2>
+    <h2> <%= t('.students') %> <small><%= link_to( t('.add_student'), new_student_path) %></small></h2>
 
     <%= render @students.limit @limit %>
 
     <div "draw_more">
       <% if Student.count > @limit %>
-        <%= button_to("Voir plus sur #{Student.count - @limit} autres étudiants", {controller: :students, action: :increment_limit, limit_value: @limit}) %>
+        <%= button_to( t('.see_more', count: (Student.count - @limit)) , {controller: :students, action: :increment_limit, limit_value: @limit}) %>
       <% end %>
     </div>
     

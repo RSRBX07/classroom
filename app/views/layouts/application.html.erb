@@ -5,7 +5,7 @@
       <% if @student != nil %>
         <%= @student.name %>
       <% else %>
-        Gestion Cours
+        <%= t('title') %>
       <% end %>
     </title>
 
@@ -24,7 +24,7 @@
         </div> 
 
         <div class="col-sm-1">
-          <h4><%= link_to 'Accueil', students_path %></h4>
+          <h4><%= link_to t('home'), students_path %></h4>
         </div>   
 
       </div>

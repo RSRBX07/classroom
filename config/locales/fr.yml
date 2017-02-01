@@ -1,0 +1,19 @@
+fr: 
+  hello: "Wesh le monde!"
+
+  home: "Accueil"
+  title: "Gestion des cours"
+
+  students:
+    index: 
+      add_student: '- Créer étudiant'
+      add_course: '- Créer cours'
+      count_suscribed_students: '  élèves sont actuellement inscrits'
+      students: 'Etudiants'
+      courses-list: 'Liste des cours'
+      field: 'Matière'
+      teacher: 'Professeur'
+      suscribed_students: 'Etudiants inscrits'
+      access: 'Accès'
+      manage_course: 'Gérer cours'
+      see_more: "Voir plus parmis %{count} autres étudiants"

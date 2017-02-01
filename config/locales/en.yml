@@ -21,3 +21,21 @@
 
 en:
   hello: "Hello world"
+
+  home: "Home"
+  title: "Manage courses"
+
+  students:
+    index: 
+      add_student: '- Create student'
+      add_course: '- Create course'
+      count_suscribed_students: ' students are in database'
+      students: 'Students'
+      courses-list: 'Courses list'
+      field: 'Field'
+      teacher: 'Teacher'
+      suscribed_students: 'Suscribed Students'
+      access: 'Access'
+      manage_course: 'Manage course'
+      see_more: 'See more among %{count} other students'
+
