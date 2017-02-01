@@ -20,14 +20,14 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = Course.new(params[:course])
+    @course = Course.new(course_params)
 
     respond_to do |format|
       if @course.save!
         format.html { redirect_to students_path, :flash => { :notice => 'Cours créé avec succès'} }
         format.json { render :show, status: :created, location: @courses }
       else
-        format.html { render :new_course}
+        format.html { render :new}
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
 
   
   def course_params
-      params.permit(:field, :teacher)
+      params.require(:course).permit(:field, :teacher)
   end
 
 end

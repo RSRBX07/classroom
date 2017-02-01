@@ -4,7 +4,7 @@
 
     <h1><%= @course.field %></h1>
     <h3>Avec <%= @course.teacher %>
-    <h3><%= @course.students.count %> y sont inscrits</h3>
+    <h3><%= @course.students.count %> élèves y sont inscrits</h3>
 
   </div>
 </div>
@@ -14,6 +14,7 @@
   <div class="row">
   <!-- Inscrit -->
     <div class="col-sm-6">
+      <h2>Elèves inscrits au cours de <%= @course.field %></h2>
       <table class="table table-striped">
 
         <thead>
@@ -22,6 +23,7 @@
             <th>Nom</th>
             <th>Age</th>
             <th>Cours actuel</th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -39,6 +41,7 @@
                     Aucun
                   <% end %>
                 </th>
+                <th><%= button_to "Retirer", rmc_student_path(student.id) %></th>
               </tr>
             <% end %>
           <% end %>
@@ -46,6 +49,7 @@
       </table>
     </div>
   <!-- Pas inscrit -->
+    <h2>Elèves non-participants</h2>
     <div class="col-sm-6">
       <table class="table table-striped">
 

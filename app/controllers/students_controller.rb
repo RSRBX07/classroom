@@ -1,5 +1,18 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :remove_course]
+
+
+  def remove_course
+
+    @course_id = @student.course_id
+    @student.course_id = nil
+
+    if @student.save
+      redirect_to(setup_courses_path(@course_id), notice: "Etudiant retiré du cours")
+    else
+      redirect_to(setup_courses_path(@course_id), notice: "L'étudiant n'a pas pu être retiré du cours")
+    end
+  end
 
    def index 
      @students= Student.all
@@ -76,4 +89,5 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:name, :age, :picture)
     end
+
 end
