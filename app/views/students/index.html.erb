@@ -6,9 +6,6 @@
     <div class="container">
       <h1>Gestion des cours</h1>
       <h4><%= Student.count %> élèves sont actuellement inscrits</h4>
-      <div class="btn btn-primary btn-lg">
-        <%= link_to 'Créer étudiant', new_student_path %>
-      </div>
     </div>
   </div>
 </div>
@@ -17,8 +14,7 @@
 <!-- Colonne de gauche -->
   <div class="col-sm-8">
     <div class="container">
-      <h2> Liste des cours </h2>
-      <%= link_to "Créer cours", new_course_path %>
+      <h2> Liste des cours <small><%= link_to "- Créer cours", new_course_path %></small</h2>
       <!-- Tableau des cours -->
       <table class="table table-striped">
 
@@ -32,7 +28,8 @@
         </thead>
 
         <tbody>
-          <% @courses.each do |course| %>
+        
+          <% @courses.ordered_by_last_created.each do |course| %>
             <tr>
               <th><%= course.field %></th>
               <th><%= course.teacher %></th>
@@ -48,9 +45,12 @@
 
 <!-- Colonne de droite -->
   <div class="col-sm-4">
-    <h2> Etudiants </h2>
+    <h2> Etudiants <small><%= link_to '- Créer étudiant', new_student_path %></small></h2>
 
-    <%= render @students %>
+    <%= render @students.limit 7 %>
+    <div "draw_more">
+      Voir <%=  Student.count - 7%> autres étudiants<!--Make a sytem to setup limit-->
+    </div>
     
   </div>
 </div>

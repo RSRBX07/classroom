@@ -1,9 +1,8 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy, :remove_course]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :remove_course, :add_course]
 
 
   def remove_course
-
     @course_id = @student.course_id
     @student.course_id = nil
 
@@ -13,6 +12,7 @@ class StudentsController < ApplicationController
       redirect_to(setup_courses_path(@course_id), notice: "L'étudiant n'a pas pu être retiré du cours")
     end
   end
+
 
    def index 
      @students= Student.all

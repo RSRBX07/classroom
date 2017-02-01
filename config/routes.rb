@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # get 'courses/new', to: 'courses#new', as: "new_course"
   # post 'courses/create', to: 'courses#create',as:"courses"
 
-#remove student's course
+#remove/add student's course
   post 'students/course/:id', to: 'students#remove_course', :as => "rmc_student"
+  post 'course/:id', to: 'courses#add_course'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
