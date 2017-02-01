@@ -31,7 +31,7 @@
           <% @students.each do |student| %>
             <% if student.course_id == @course.id %>
               <tr>
-                <th><img class="picture-mini" src=<%= student.picture %></th>
+                <th><img class="picture-mini" src=<%= student.picture %>> </th>
                 <th><%= student.name %></th>
                 <th><%= student.age %></th>
                 <th>
@@ -41,7 +41,7 @@
                     Aucun
                   <% end %>
                 </th>
-                <th><%= button_to "Retirer", rmc_student_path(student.id) %></th>
+                <th><%= button_to "Retirer", remove_course_path(student.id) %> </th>
               </tr>
             <% end %>
           <% end %>
@@ -66,7 +66,7 @@
           <% @students.each do |student| %>
             <% if student.course_id != @course.id %>
               <tr>
-                <th><img class="picture-mini" src=<%= student.picture %></th>
+                <th><img class="picture-mini" src=<%= student.picture %>> </th>
                 <th><%= student.name %></th>
                 <th><%= student.age %></th>
                 <th>
@@ -76,7 +76,7 @@
                     Aucun
                   <% end %>
                 </th>
-                
+                <th><%= button_to "Ajouter", {controller: :students, action: :add_course, course_id: @course.id, student_id: student.id , class: "button"} %></th>
               </tr>
             <% end %>
           <% end %>

@@ -1,20 +1,10 @@
 class CoursesController < ApplicationController
-  before_action :set_student, only: [:add_course]
 
   def index 
      @courses= Course.all
      
   end
 
-  def add_course
-    @student.course_id = @course.id
-
-    if @student.save
-      redirect_to(setup_courses_path(@course_id), notice: "Etudiant ajouté au cours")
-    else
-      redirect_to(setup_courses_path(@course_id), notice: "L'étudiant n'a pas pu être ajouté cours")
-    end
-  end
 
   def show
     @students= Student.all

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # post 'courses/create', to: 'courses#create',as:"courses"
 
 #remove/add student's course
-  post 'students/course/:id', to: 'students#remove_course', :as => "rmc_student"
-  post 'course/:id', to: 'courses#add_course'
+  post 'students/course/:id', to: 'students#remove_course', :as => "remove_course"
+  post 'course/add', to: 'students#add_course', :as => "add_course"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -2,6 +2,18 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :remove_course, :add_course]
 
 
+  def add_course
+    @course = Course.find params[:course_id]
+    @student = Student.find params[:student_id]
+    @student.course_id = @course.id
+
+    if @student.save
+      redirect_to(setup_courses_path(@course.id), notice: "Etudiant ajouté au cours")
+    else
+      redirect_to(setup_courses_path(@course.id), notice: "L'étudiant n'a pas pu être ajouté cours")
+    end
+  end
+
   def remove_course
     @course_id = @student.course_id
     @student.course_id = nil
