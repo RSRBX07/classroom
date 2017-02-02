@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'students/index/increment', :to => "students#increment_limit", :as => "increment_limit"
 
 #change language
-  post 'language/:lang', :to => "application#change_language", as: "change_lang"
+  get 'language/:lang', :to => "application#change_language", as: "change_lang"
 
 #create course
   resources :courses
