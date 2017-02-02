@@ -2,12 +2,10 @@
 
 one:
   login: MyString
-  password: MyString
   admin_id: MyString
   student_id: MyString
 
 two:
   login: MyString
-  password: MyString
   admin_id: MyString
   student_id: MyString
