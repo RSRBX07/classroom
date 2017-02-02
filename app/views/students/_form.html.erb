@@ -11,20 +11,60 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Nom" %>
-    <%= f.text_field :name %>
-  </div>
+<div class= "container">
+  <div class="row">
+    <div class= "centered">
+    <!-- Fields -->
+      <div class="col-sm-6">
+        <h2>Entrez les informations...</h2>
 
-  <div class="field">
-    <%= f.label "Age" %>
-    <%= f.text_field :age %>
-  </div>
+        <br>
+        <h2>
+          <div class="field">
+            <%= f.label "Nom" %>
+            <%= f.text_field :name %>
+          </div>
 
-  <div class="field">
-    <%= f.label "Url Photo" %>
-    <%= f.text_field :picture %>
+          <br>
+
+          <div class="field">
+            <%= f.label "Age" %>
+            <%= f.text_field :age %>
+          </div>
+
+          <br>
+        </h2>
+
+      </div>
+
+      <!-- Choose picture -->
+      <div class="col-sm-6">
+        <h2>... et choisissez une photo de profil</h2>
+        <div class= "container">
+          <table class= "galery">
+
+            <tr>
+              <th><%= link_to image_tag("fr_flag.png", size: "64"), change_lang_path(:fr) %></th>
+              <th><%= link_to image_tag("fr_flag.png", size: "64"), change_lang_path(:fr) %></th>
+              <th><%= link_to image_tag("fr_flag.png", size: "64"), change_lang_path(:fr) %></th>
+              <th><%= link_to image_tag("fr_flag.png", size: "64"), change_lang_path(:fr) %></th>
+            </tr>
+
+          </table>
+        </div>
+
+        <h2>Ou entrez une Url personalisée</h2>
+        <br>
+        <div class="field">
+          <%= f.label "Url Photo" %>
+          <%= f.text_field :picture %>
+        </div>
+        <br>
+
+      </div>
+    </div>
   </div>
+</div>
 
 
   <div class="actions">

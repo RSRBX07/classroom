@@ -40,4 +40,15 @@
   border-radius: 5px;
   margin: 5px;
 }
+.centered {
+  margin: auto;
+}
 
+.galery {
+  border-radius: 25px;
+  border: 1px solid lightgrey;
+}
+
+.galery tbody > tr > th > a > img {
+  margin: 5px;
+}

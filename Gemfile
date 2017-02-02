@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#Seed dump : Create seeds from actual database (cmd : rake db:seed:dump)
 gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
 group :development, :test do

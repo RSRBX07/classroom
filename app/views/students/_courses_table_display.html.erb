@@ -1,24 +1,24 @@
 <table class="table table-striped">
 
-        <thead>
-          <tr>
-            <th><%= t('.field') %></th>
-            <th><%= t('.teacher') %></th>
-            <th><%= t('.suscribed_students') %></th>
-            <th><%= t('.access') %></th>
-          </tr>
-        </thead>
+  <thead>
+    <tr>
+      <th><%= t('.field') %></th>
+      <th><%= t('.teacher') %></th>
+      <th><%= t('.suscribed_students') %></th>
+      <th><%= t('.access') %></th>
+    </tr>
+  </thead>
 
-        <tbody>
-        
-          <% @courses.ordered_by_last_created.each do |course| %>
-            <tr>
-              <th><%= course.field %></th>
-              <th><%= course.teacher %></th>
-              <th><%= course.students.count %></th>
-              <th><%= link_to(t('.manage_course'), setup_courses_path(course.id)) %></th>
-            </tr>
-          <% end %>
-        </tbody>
+  <tbody>
+  
+    <% @courses.ordered_by_last_created.each do |course| %>
+      <tr>
+        <th><%= course.field %></th>
+        <th><%= course.teacher %></th>
+        <th><%= course.students.count %></th>
+        <th><%= link_to(t('.manage_course'), setup_courses_path(course.id)) %></th>
+      </tr>
+    <% end %>
+  </tbody>
 
-      </table>
+</table>
