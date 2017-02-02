@@ -7,5 +7,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    change_table :students do |t|
+      t.integer :user_id
+    end
   end
 end

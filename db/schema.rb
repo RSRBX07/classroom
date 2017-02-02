@@ -20,10 +20,13 @@ ActiveRecord::Schema.define(version: 20170202101001) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string  "name"
-    t.integer "course_id"
-    t.string  "picture",   default: "http://istc-pc-test-media.cs.washington.edu/images/default-profile-pic.png"
-    t.integer "age"
+    t.string   "name"
+    t.datetime "created_at",                                                                                        null: false
+    t.datetime "updated_at",                                                                                        null: false
+    t.integer  "course_id"
+    t.string   "picture",    default: "http://istc-pc-test-media.cs.washington.edu/images/default-profile-pic.png"
+    t.integer  "age"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

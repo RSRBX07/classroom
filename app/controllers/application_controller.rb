@@ -15,8 +15,4 @@ class ApplicationController < ActionController::Base
     cookies[:language] = { :value => params[:lang]}
     redirect_to session[:previous_request_url]
   end
-
-  def current_user
-  
-  end
 end

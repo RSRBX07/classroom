@@ -1,9 +1,13 @@
 class Student < ApplicationRecord
   validates :name, :presence => true
   belongs_to :course, required: false
-  has_many :user
+  belongs_to :user
 
   default_scope {self.ordered_by_name}
+ 
+  def self.of_user user
+    user.student
+  end
 
   def self.limit value
     self.limit value
