@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'courses/show/:id', :to => "courses#show" , :as => "setup_courses"
   post 'students/index/increment', :to => "students#increment_limit", :as => "increment_limit"
 
+#change language
+  post 'language/:lang', :to => "application#change_language", as: "change_lang"
+
 #create course
   resources :courses
   # get 'courses/new', to: 'courses#new', as: "new_course"

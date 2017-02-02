@@ -10,10 +10,11 @@ fr:
       add_course: '- Créer cours'
       count_suscribed_students: '  élèves sont actuellement inscrits'
       students: 'Etudiants'
-      courses-list: 'Liste des cours'
-      field: 'Matière'
-      teacher: 'Professeur'
-      suscribed_students: 'Etudiants inscrits'
-      access: 'Accès'
-      manage_course: 'Gérer cours'
+      courses_list: 'Liste des cours'
       see_more: "Voir plus parmis %{count} autres étudiants"
+      
+  manage_course: 'Gérer cours'
+  field: 'Matière'
+  teacher: 'Professeur'
+  suscribed_students: 'Etudiants inscrits'
+  access: 'Accès'

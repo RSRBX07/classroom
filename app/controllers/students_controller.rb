@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :remove_course, :add_course]
 
-
+  
   def add_course
     @course = Course.find params[:course_id]
     @student = Student.find params[:student_id]

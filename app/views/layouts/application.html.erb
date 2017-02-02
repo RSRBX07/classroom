@@ -25,7 +25,14 @@
 
         <div class="col-sm-1">
           <h4><%= link_to t('home'), students_path %></h4>
-        </div>   
+        </div>  
+
+        <div class="col-sm-8"> </div>
+
+        <div class="col-sm-2">
+          <%= button_to 'fr', change_lang_path(:fr) %>
+          <%= button_to 'eng', change_lang_path(:en) %>
+        </div>
 
       </div>
     </header>
